@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.hardware.Camera
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         var camera = Camera.open()
         var params = camera.parameters
 
-        var size = params.getSupportedPictureSizes().filter { it.width > 300 && it.height > 300 }.last()
+        var size = params.getSupportedPictureSizes().filter { it.width > 300 && it.height > 300 }.sortedBy { it.width+it.height }.first()
         params.setPictureSize(size.width, size.height)
 
         var or = params.get("orientation")
@@ -36,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             camera.takePicture(null, null) { data, _ ->
                 val bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
+                //TODO rotar y Crop bitmap
                 captured_image.setImageBitmap(bitmap)
+                camera_preview.visibility = View.GONE
             }
         }
     }
