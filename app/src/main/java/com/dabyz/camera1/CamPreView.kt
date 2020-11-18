@@ -10,7 +10,7 @@ class CamPreView(ctx: Context?) : SurfaceView(ctx) {
 
     constructor(ctx: Context?, w: Int, h: Int, camera: Camera) : this(ctx) {
         //holder.setFixedSize(w,h)
-        holder.setFixedSize(w*2,h*2)
+        holder.setFixedSize(w*4,h*4) // 960x1280
         //holder.setSizeFromLayout()
         holder.addCallback(object : SurfaceHolder.Callback {
             override fun surfaceCreated(holder: SurfaceHolder) {

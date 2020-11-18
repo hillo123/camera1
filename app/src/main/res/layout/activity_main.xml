@@ -3,45 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10sp"
-    android:paddingTop="10sp"
-    android:paddingRight="10sp"
-    android:paddingBottom="10sp"
+
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <!--        android:layout_width="1728px"-->
+    <!--        android:layout_height="2304px"-->
+
+    <SurfaceView
         android:id="@+id/camera_preview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+
+        android:layout_width="1728px"
+        android:layout_height="2304px"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="1080px"
+        android:layout_height="1080px"
         android:layout_below="@+id/camera_preview"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="1080px"
         android:text="@string/capture_button"
-        app:layout_constraintBottom_toTopOf="@+id/captured_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera_preview" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/captured_image"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:contentDescription="@string/desc"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:layout_editor_absoluteX="10dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
