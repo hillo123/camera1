@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         param.topMargin = windowManager.defaultDisplay.width
         val paramBackgroundButton = backgroudButton.layoutParams as ViewGroup.MarginLayoutParams
         paramBackgroundButton.topMargin = windowManager.defaultDisplay.width
-        camera_preview.layoutParams.height = ((windowManager.defaultDisplay.width * size.width / 300)) //* / (conteito1)).toInt()
-        camera_preview.layoutParams.width = ((size.height * windowManager.defaultDisplay.width / size.height * (percentCrop)).toInt()) //*/(conteito1)).toInt()
+        camera_preview.layoutParams.height = ((windowManager.defaultDisplay.width * size.width /300)) //* / (conteito1)).toInt()
+        camera_preview.layoutParams.width = ((size.width * windowManager.defaultDisplay.width / size.width * (percentCrop)).toInt()) //*/(conteito1)).toInt()
         val aa= ((windowManager.defaultDisplay.width * size.width / 300)) //* / (conteito1)).toInt()
         val bb = ((size.height * windowManager.defaultDisplay.width / size.height * (percentCrop)).toInt()) //*/(conteito1)).toInt()
 
