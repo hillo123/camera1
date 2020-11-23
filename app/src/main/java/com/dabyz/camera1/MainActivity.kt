@@ -73,14 +73,20 @@ class MainActivity : AppCompatActivity() {
         val param = button.layoutParams as ViewGroup.MarginLayoutParams
         param.topMargin = windowManager.defaultDisplay.width
         val paramBackgroundButton = backgroudButton.layoutParams as ViewGroup.MarginLayoutParams
-        paramBackgroundButton.topMargin = windowManager.defaultDisplay.width
-        camera_preview.layoutParams.height = ((windowManager.defaultDisplay.width * size.width /300)) //* / (conteito1)).toInt()
-        camera_preview.layoutParams.width = ((size.width * windowManager.defaultDisplay.width / size.width * (percentCrop)).toInt()) //*/(conteito1)).toInt()
-        val aa= ((windowManager.defaultDisplay.width * size.width / 300)) //* / (conteito1)).toInt()
-        val bb = ((size.height * windowManager.defaultDisplay.width / size.height * (percentCrop)).toInt()) //*/(conteito1)).toInt()
+        paramBackgroundButton.apply {
+            topMargin = windowManager.defaultDisplay.width
+            width = windowManager.defaultDisplay.width
+            height = windowManager.defaultDisplay.width
+        }
 
-        Log.e("heigh", camera_preview.layoutParams.height.toString())
-        Log.e("widht", camera_preview.layoutParams.width.toString())
+        //VALORES DE CAMARA DISPLAY
+        camera_preview.layoutParams.height = ((windowManager.defaultDisplay.width * size.width /300))
+        camera_preview.layoutParams.width = ((size.height * windowManager.defaultDisplay.width / size.height * (percentCrop)).toInt())
+        val aa= ((windowManager.defaultDisplay.width * size.width / 300))
+        val bb = ((size.height * windowManager.defaultDisplay.width / size.height * (percentCrop)).toInt())
+
+        Log.e("heigh set", camera_preview.layoutParams.height.toString())
+        Log.e("widht set", camera_preview.layoutParams.width.toString())
         Log.e("heigh", aa.toString())
         Log.e("widht", bb.toString())
 
